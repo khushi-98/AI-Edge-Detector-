@@ -46,56 +46,7 @@ Canny Edge Detection
 Edge-Detected Image
 ```
 
-## 📂 Project Structure
 
-```text
-ai-edge-detector/
-│
-├── app.py              # Main application
-├── requirements.txt    # Project dependencies
-├── README.md           # Project documentation
-└── screenshots/        # Optional project screenshots
-```
-
-## 📦 Installation and Setup
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/ai-edge-detector.git
-```
-
-### 2. Navigate to the Project Directory
-
-```bash
-cd ai-edge-detector
-```
-
-### 3. Create a Virtual Environment (Optional)
-
-```bash
-python -m venv venv
-```
-
-Activate it on Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-### 4. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 5. Run the Application
-
-```bash
-python app.py
-```
-
-Open the local URL displayed in your terminal to use the application.
 
 ## 📋 Requirements
 
@@ -107,38 +58,6 @@ gradio
 numpy
 ```
 
-## 💻 Example Implementation
-
-The following is the core edge-detection function:
-
-```python
-import cv2
-import gradio as gr
-import numpy as np
-
-def detect_edges(image):
-    if image is None:
-        return None
-
-    # Convert RGB image to grayscale
-    gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-
-    # Apply Canny edge detection
-    edges = cv2.Canny(gray, 100, 200)
-
-    return edges
-
-demo = gr.Interface(
-    fn=detect_edges,
-    inputs=gr.Image(type="numpy"),
-    outputs=gr.Image(type="numpy"),
-    title="AI Edge Detector",
-    description="Upload an image to detect its edges."
-)
-
-if __name__ == "__main__":
-    demo.launch()
-```
 
 ## 🌍 Real-World Applications
 
